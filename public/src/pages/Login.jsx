@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
+import bgi from "../assets/bg.png"
 import landing from "../assets/landing.png";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
@@ -94,7 +95,8 @@ const Login = () => {
     <>
       <FormContainer>
         <div className="logo">
-          <img src={landing} alt="socializer" />
+          <img className="limg" src={landing} alt="socializer" />
+          <img className="img" src={bgi} alt="img" />
         </div>
         <div className="form">
         <form
@@ -147,20 +149,27 @@ const FormContainer = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #FBF9FA;
-  
+  background-color: #fff;
+
   .logo{
     position:fixed;
-    top:6ch;
-    bottom:6ch;
-    justify-content: center;
-    width: 50vw;
+    top:1vw;
+    bottom:0ch;
+    width: 55vw;
     float: left;
+    
   }
-  .logo img{
+  .img {
+    height: 70%;
+    width: 70%;
+    align-items: center;
+  }
+  .logo .limg{
+    gap: 1ch;
     justify-content: center;
-    height: 100%;
-    width: 100%;
+    height: 30%;
+    width: 90%;
+    
   }
   .brand {
     display: flex;
